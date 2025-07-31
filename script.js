@@ -13,6 +13,15 @@ function getComputerChoice(){
     return choice;
 }
 
-for (let i = 0; i < 6; i++){
-    console.log(getComputerChoice())
+function getHumanChoice(){
+    let choice = "";
+    const valid_choices = ["rock", "paper", "scissors"];
+    while (!valid_choices.includes(choice)){
+        choice = prompt("Please select rock, paper, or scissors.").toLowerCase();
+    }
+    return choice
 }
+
+
+console.log(getComputerChoice())
+console.log(getHumanChoice())
