@@ -66,6 +66,22 @@ function playRound(humanSelection, computerSelection, humanScore, computerScore)
 
     // update scoreboard
     scoreDisplay.textContent = ("Player Score: " + humanScore + " Computer Score: " + computerScore)
+
+    // check for game over
+    if (humanScore === 5 || computerScore ===5){
+        if (humanScore === 5){
+            content.textContent = "You reached 5 points! You win the game! Refresh page to play again."
+        }
+        else{
+            content.textContent = "Computer reached 5 points! Computer wins the game! Refresh page to play again."
+        }
+
+        // disable buttons
+        const buttons = document.querySelectorAll("button");
+        buttons.forEach((button) => {
+            button.disabled = true;
+        })
+    }
     return [humanScore, computerScore]
 }
 
